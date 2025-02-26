@@ -42,6 +42,13 @@ public final class ModelFactory {
                     .dob(470275200L)
             );
     }
+    
+  public static DepositSwitchAccount newDepositSwitchAccount(String accountNumber, String bankIdentifier, String type) {
+        return new DepositSwitchAccount()
+            .accountNumber(accountNumber)
+            .bankIdentifier(bankIdentifier)
+            .type(type);
+    }  
 
     public static NewCustomer newCustomer() {
         var username = "customer_" + randomStr();
@@ -108,7 +115,7 @@ public final class ModelFactory {
                 .receiver(new Receiver()
                         .accountNumber("5111111111")
                         .routingNumber("011000138")
-                        .accountType("Checking")
+                        .accountType("personalChecking")
                         .name("API client test"));
     }
 
